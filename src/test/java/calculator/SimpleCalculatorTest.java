@@ -9,19 +9,30 @@ public class SimpleCalculatorTest {
     
     private Calculator calculator;
 
+    private final static Key[] numberKeys = {Key.ZERO, Key.ONE, Key.TWO, Key.THREE, 
+            Key.FOUR, Key.FIVE, Key.SIX, Key.SEVEN, Key.EIGHT, Key.NINE};
+
     @Before
     public void setUp() throws Exception {
         calculator = new SimpleCalculator();
     }
 
     @Test
-    public void press_number_key() {
-        String result = calculator.press(Key.ZERO);
-        assertEquals("0", result);
+    public void press_singleNumberKey() {
+        for (int i = 0; i < numberKeys.length; i++) {
+            assertEquals(String.valueOf(i), calculator.press(numberKeys[i]));
+            calculator.reset();
+        }
+    }
+    
+    @Test
+    public void press_combNumberKeys_withoutZero() {
+        
+    }
 
-        calculator.press(Key.AC);
-        result = calculator.press(Key.ONE);
-        assertEquals("1", result);
+    @Test
+    public void press_combNumberKeys_withZero() {
+
     }
 
     @Test
