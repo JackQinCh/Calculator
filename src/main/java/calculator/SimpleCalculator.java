@@ -6,10 +6,11 @@ import com.sun.istack.internal.NotNull;
 import java.util.Map;
 
 public class SimpleCalculator implements Calculator {
-    
-    private String display;
-    
-    private final static Map<Key, String> NUMBER_KEY_DISPLAY = 
+    private static final String ZERO = "0";
+
+    private String display = ZERO;
+
+    private final static Map<Key, String> NUMBER_KEY_DISPLAY =
             ImmutableMap.<Key, String>builder()
                     .put(Key.ZERO, "0")
                     .put(Key.ONE, "1")
@@ -31,7 +32,7 @@ public class SimpleCalculator implements Calculator {
     @Override
     public String press(@NotNull final Key key) {
         if (NUMBER_KEY_DISPLAY.containsKey(key)) {
-            addNumberToDisplay(NUMBER_KEY_DISPLAY.get(key));
+            appendNumberToDisplay(NUMBER_KEY_DISPLAY.get(key));
         } else {
             throw new IllegalArgumentException("Unsupported key");
         }
@@ -50,11 +51,11 @@ public class SimpleCalculator implements Calculator {
 
     @Override
     public void reset() {
-        display = "0";
+        setDisplay(ZERO);
     }
-    
-    private void addNumberToDisplay(String number) {
-        if (getDisplay().equals("0")) {
+
+    private void appendNumberToDisplay(String number) {
+        if (getDisplay().equals(ZERO)) {
             setDisplay(number);
         } else {
             setDisplay(getDisplay() + number);
