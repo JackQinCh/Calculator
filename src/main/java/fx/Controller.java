@@ -1,4 +1,4 @@
-package sample;
+package fx;
 
 public class Controller {
 }
