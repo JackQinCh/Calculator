@@ -1,2 +1,2 @@
-# JavaFX Calculator
-A calculator JavaFX application.
+# Calculator Engine
+A calculator engine.
