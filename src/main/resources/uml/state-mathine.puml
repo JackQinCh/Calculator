@@ -1,0 +1,11 @@
+@startuml
+
+Idle: waiting for input
+AppendNumber: append number
+
+[*] --> Idle: initial 0
+Idle --> AppendNumber: number/dot
+AppendNumber --> Idle: operation/equals/
+AppendNumber --> [*]
+
+@enduml
