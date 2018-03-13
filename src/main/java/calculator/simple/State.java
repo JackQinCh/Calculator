@@ -1,4 +1,4 @@
-package calculator.simple.state;
+package calculator.simple;
 
 import calculator.Key;
 
