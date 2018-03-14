@@ -1,54 +1,67 @@
 package calculator.simple;
 
+import calculator.CalcEngine;
 import calculator.Calculator;
 import calculator.Key;
-import calculator.KeyText;
+import com.google.common.collect.ImmutableMap;
 import com.sun.istack.internal.NotNull;
 
-import java.util.Objects;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.stream.Stream;
 
 public class SimpleCalculator implements Calculator {
-
-    final State IDLE_STATE;
-    final State APPEND_STATE;
-
-    private String display = KeyText.ZERO;
-    private State state;
+    
+    private final SimpleCalcEngine engine;
+    private final Map<String, Key> keyMap;
 
     public SimpleCalculator() {
-        IDLE_STATE = new IdleState(this);
-        APPEND_STATE = new AppendState(this);
-        reset();
+        this.engine = new SimpleCalcEngine();
+        this.keyMap = ImmutableMap.<String, Key>builder()
+                .put(KeySet.ZERO, new KeyZero(engine))
+                .build();
     }
 
     @NotNull
     @Override
-    public String press(@NotNull final Key key) {
-        Objects.requireNonNull(state);
-        state.press(key);
-
+    public String press(@NotNull final String key) {
+        if (!getKeyMap().containsKey(key)) {
+            throw new IllegalArgumentException(String.format("Unsupported key %s.", key));
+        }
+        getKeyMap().get(key).press();
         return getDisplay();
+    }
+
+    @Override
+    public Stream<String> getAllKeys() {
+        return getKeyMap().keySet().stream();
     }
 
     @NotNull
     @Override
     public String getDisplay() {
-        return display;
+        return getEngine().getDisplay();
     }
 
     @Override
     public void reset() {
-        display = KeyText.ZERO;
-        state = IDLE_STATE;
+        getEngine().reset();
+    }
+    
+    protected CalcEngine getEngine() {
+        return engine;
+    }
+    
+    protected Map<String, Key> getKeyMap() {
+        return keyMap;
     }
 
-    void setState(State state) {
-        this.state = state;
-    }
+    public static void main(String[] args) {
+        Calculator calculator = new SimpleCalculator();
 
-    void setDisplay(String display) {
-        this.display = display;
+        System.out.println(calculator.press(KeySet.ZERO));
 
+        System.out.println(Arrays.toString(calculator.getAllKeys().toArray()));
     }
 
 }
