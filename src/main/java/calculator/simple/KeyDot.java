@@ -12,7 +12,7 @@ public class KeyDot extends KeyNumber{
                 engine.setDisplay(engine.getDisplay() + getSymbol());
             }
         } else {
-            engine.setDisplay(Keys.ZERO + getSymbol());
+            engine.setDisplay(Keys.ZERO.getSymbol() + getSymbol());
             engine.setAppending(true);
         }
     }
