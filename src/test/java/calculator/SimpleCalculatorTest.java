@@ -5,6 +5,10 @@ import calculator.simple.SimpleCalculator;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import static org.junit.Assert.assertEquals;
 
 public class SimpleCalculatorTest {
@@ -164,5 +168,15 @@ public class SimpleCalculatorTest {
                 .pressKey(Keys.DIVISION.getSymbol())
                 .pressKey(Keys.ZERO.getSymbol())
                 .pressKey(Keys.DIVISION.getSymbol());
+    }
+    
+    @Test
+    public void testGetAllKeys() throws Exception {
+        Set<String> expectedKeys = 
+                Arrays.stream(Keys.values())
+                        .map(Keys::getSymbol)
+                        .collect(Collectors.toSet());
+        
+        assertEquals(expectedKeys, calculator.getAllKeys().collect(Collectors.toSet()));
     }
 }
