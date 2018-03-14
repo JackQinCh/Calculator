@@ -19,6 +19,6 @@ public class KeyDivision extends KeyBiOperation {
 
     @Override
     protected BiFunction<BigDecimal, BigDecimal, BigDecimal> getOperation() {
-        return BigDecimal::divideToIntegralValue;
+        return BigDecimal::divide;
     }
 }
