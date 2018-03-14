@@ -66,26 +66,103 @@ public class SimpleCalculatorTest {
     }
     
     @Test
-    public void testPressKey_plus() throws Exception {
+    public void testPressKey_add() throws Exception {
         calculator.reset()
                 .pressKey(Keys.ONE.getSymbol())
-                .pressKey(Keys.PLUS.getSymbol())
+                .pressKey(Keys.ADD.getSymbol())
                 .pressKey(Keys.ONE.getSymbol())
-                .pressKey(Keys.PLUS.getSymbol());
+                .pressKey(Keys.ADD.getSymbol());
         
         assertEquals("2", calculator.getDisplay());
     }
 
     @Test
-    public void testPressKey_plusWithZero() throws Exception {
+    public void testPressKey_addWithZero() throws Exception {
         calculator.reset()
                 .pressKey(Keys.ONE.getSymbol())
-                .pressKey(Keys.PLUS.getSymbol())
+                .pressKey(Keys.ADD.getSymbol())
                 .pressKey(Keys.ZERO.getSymbol())
-                .pressKey(Keys.PLUS.getSymbol())
+                .pressKey(Keys.ADD.getSymbol())
                 .pressKey(Keys.ONE.getSymbol())
-                .pressKey(Keys.PLUS.getSymbol());
+                .pressKey(Keys.ADD.getSymbol());
 
         assertEquals("2", calculator.getDisplay());
+    }
+
+    @Test
+    public void testPressKey_subtract() throws Exception {
+        calculator.reset()
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.SUBTRACT.getSymbol())
+                .pressKey(Keys.ONE.getSymbol())
+                .pressKey(Keys.SUBTRACT.getSymbol());
+
+        assertEquals("1", calculator.getDisplay());
+    }
+
+    @Test
+    public void testPressKey_subtractNegative() throws Exception {
+        calculator.reset()
+                .pressKey(Keys.ONE.getSymbol())
+                .pressKey(Keys.SUBTRACT.getSymbol())
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.SUBTRACT.getSymbol());
+
+        assertEquals("-1", calculator.getDisplay());
+    }
+
+    @Test
+    public void testPressKey_multiply() throws Exception {
+        calculator.reset()
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.MULTIPLY.getSymbol())
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.MULTIPLY.getSymbol());
+
+        assertEquals("4", calculator.getDisplay());
+    }
+
+    @Test
+    public void testPressKey_multiplyZero() throws Exception {
+        calculator.reset()
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.MULTIPLY.getSymbol())
+                .pressKey(Keys.ZERO.getSymbol())
+                .pressKey(Keys.MULTIPLY.getSymbol());
+
+        assertEquals("0", calculator.getDisplay());
+    }
+
+    @Test
+    public void testPressKey_multiplyNegative() throws Exception {
+        calculator.reset()
+                .pressKey(Keys.ONE.getSymbol())
+                .pressKey(Keys.SUBTRACT.getSymbol())
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.MULTIPLY.getSymbol())
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.MULTIPLY.getSymbol());
+
+        assertEquals("-2", calculator.getDisplay());
+    }
+
+    @Test
+    public void testPressKey_division() throws Exception {
+        calculator.reset()
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.DIVISION.getSymbol())
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.DIVISION.getSymbol());
+
+        assertEquals("1", calculator.getDisplay());
+    }
+
+    @Test(expected = ArithmeticException.class)
+    public void testPressKey_divideZero() throws Exception {
+        calculator.reset()
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.DIVISION.getSymbol())
+                .pressKey(Keys.ZERO.getSymbol())
+                .pressKey(Keys.DIVISION.getSymbol());
     }
 }

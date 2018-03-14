@@ -12,10 +12,10 @@ public enum Keys {
     EIGHT("8"),
     NINE("9"),
     DOT("."),
-    PLUS("+"),
-    MINUS("-"),
-    MULTIPLE("*"),
-    DIVIDE("/");
+    ADD("+"),
+    SUBTRACT("-"),
+    MULTIPLY("*"),
+    DIVISION("/");
     
     private final String symbol;
 

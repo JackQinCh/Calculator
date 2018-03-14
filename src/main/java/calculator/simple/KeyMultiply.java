@@ -3,18 +3,18 @@ package calculator.simple;
 import java.math.BigDecimal;
 import java.util.function.BiFunction;
 
-public class KeyPlus extends KeyBiOperation {
-    
-    public KeyPlus(SimpleCalcEngine engine) {
+public class KeyMultiply extends KeyBiOperation{
+    public KeyMultiply(SimpleCalcEngine engine) {
         super(engine);
     }
 
+    @Override
     protected String getSymbol() {
-        return Keys.PLUS.getSymbol();
+        return Keys.MULTIPLY.getSymbol();
     }
 
     @Override
     protected BiFunction<BigDecimal, BigDecimal, BigDecimal> getOperation() {
-        return BigDecimal::add;
+        return BigDecimal::multiply;
     }
 }

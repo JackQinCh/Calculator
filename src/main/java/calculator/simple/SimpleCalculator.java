@@ -22,7 +22,10 @@ public class SimpleCalculator implements Calculator {
                 .put(Keys.ONE.getSymbol(), new KeyOne(engine))
                 .put(Keys.TWO.getSymbol(), new KeyTwo(engine))
                 .put(Keys.DOT.getSymbol(), new KeyDot(engine))
-                .put(Keys.PLUS.getSymbol(), new KeyPlus(engine))
+                .put(Keys.ADD.getSymbol(), new KeyAdd(engine))
+                .put(Keys.SUBTRACT.getSymbol(), new KeySubtract(engine))
+                .put(Keys.MULTIPLY.getSymbol(), new KeyMultiply(engine))
+                .put(Keys.DIVISION.getSymbol(), new KeyDivision(engine))
                 .build();
     }
 
