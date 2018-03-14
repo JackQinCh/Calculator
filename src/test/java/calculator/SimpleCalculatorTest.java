@@ -64,4 +64,28 @@ public class SimpleCalculatorTest {
 
         assertEquals("0.2", calculator.getDisplay());
     }
+    
+    @Test
+    public void testPressKey_plus() throws Exception {
+        calculator.reset()
+                .pressKey(Keys.ONE.getSymbol())
+                .pressKey(Keys.PLUS.getSymbol())
+                .pressKey(Keys.ONE.getSymbol())
+                .pressKey(Keys.PLUS.getSymbol());
+        
+        assertEquals("2", calculator.getDisplay());
+    }
+
+    @Test
+    public void testPressKey_plusWithZero() throws Exception {
+        calculator.reset()
+                .pressKey(Keys.ONE.getSymbol())
+                .pressKey(Keys.PLUS.getSymbol())
+                .pressKey(Keys.ZERO.getSymbol())
+                .pressKey(Keys.PLUS.getSymbol())
+                .pressKey(Keys.ONE.getSymbol())
+                .pressKey(Keys.PLUS.getSymbol());
+
+        assertEquals("2", calculator.getDisplay());
+    }
 }
