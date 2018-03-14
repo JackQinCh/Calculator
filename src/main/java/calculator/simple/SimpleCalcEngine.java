@@ -26,6 +26,18 @@ public class SimpleCalcEngine implements CalcEngine{
     public String getDisplay() {
         return display;
     }
+    
+    public BigDecimal getCurrentNumber() {
+        DecimalFormat format = new DecimalFormat();
+        format.setParseBigDecimal(true);
+        BigDecimal current = null;
+        try {
+            current = (BigDecimal) format.parse(getDisplay());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return current;
+    }
 
     public void setDisplay(String display) {
         this.display = display;
@@ -54,16 +66,7 @@ public class SimpleCalcEngine implements CalcEngine{
 
         BiFunction<BigDecimal, BigDecimal, BigDecimal> previousOperation =
                 getBiOperationStack().pop();
-
-        DecimalFormat format = new DecimalFormat();
-        format.setParseBigDecimal(true);
-        BigDecimal current = null;
-        try {
-            current = (BigDecimal) format.parse(getDisplay());
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        
+        BigDecimal current = getCurrentNumber();
         BigDecimal previous = getNumberStack().pop();
         BigDecimal result = previousOperation.apply(previous, current);
         setDisplay(result.toString());

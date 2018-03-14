@@ -17,8 +17,7 @@ public abstract class KeyBiOperation implements Key {
         if (engine.isAppending()) {
             engine.setAppending(false);
             engine.computePreviousBiOperation();
-
-            BigDecimal current = new BigDecimal(Long.valueOf(engine.getDisplay()));
+            BigDecimal current = engine.getCurrentNumber();
             engine.getNumberStack().push(current);
             engine.getBiOperationStack().push(getOperation());
         } else {

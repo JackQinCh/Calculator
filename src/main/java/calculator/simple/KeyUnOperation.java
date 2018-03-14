@@ -3,8 +3,6 @@ package calculator.simple;
 import calculator.Key;
 
 import java.math.BigDecimal;
-import java.text.DecimalFormat;
-import java.text.ParseException;
 import java.util.function.Function;
 
 /**
@@ -28,14 +26,7 @@ public abstract class KeyUnOperation implements Key{
     protected abstract Function<BigDecimal, BigDecimal> getOperation();
     
     private void computeOperation(SimpleCalcEngine engine) {
-        DecimalFormat format = new DecimalFormat();
-        format.setParseBigDecimal(true);
-        BigDecimal current = null;
-        try {
-            current = (BigDecimal) format.parse(engine.getDisplay());
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        BigDecimal current = engine.getCurrentNumber();
         BigDecimal result = getOperation().apply(current);
         engine.setDisplay(result.toString());
     }
