@@ -6,15 +6,6 @@ public class KeyZero extends KeyNumber {
     }
 
     @Override
-    public void press() {
-        if (engine.isAppending()) {
-            engine.setDisplay(engine.getDisplay() + getSymbol());
-        } else {
-            engine.setDisplay(getSymbol());
-        }
-    }
-
-    @Override
     protected String getSymbol() {
         return Keys.ZERO.getSymbol();
     }

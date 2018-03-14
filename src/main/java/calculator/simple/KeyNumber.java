@@ -1,6 +1,7 @@
 package calculator.simple;
 
 import calculator.Key;
+import org.apache.commons.lang3.StringUtils;
 
 public abstract class KeyNumber implements Key {
     protected SimpleCalcEngine engine;
@@ -12,7 +13,11 @@ public abstract class KeyNumber implements Key {
     @Override
     public void press() {
         if (engine.isAppending()) {
-            engine.setDisplay(engine.getDisplay() + getSymbol());
+            if (StringUtils.equals(Keys.ZERO.getSymbol(), engine.getDisplay())) {
+                engine.setDisplay(getSymbol());
+            } else {
+                engine.setDisplay(engine.getDisplay() + getSymbol());
+            }
         } else {
             engine.setDisplay(getSymbol());
             engine.setAppending(true);
