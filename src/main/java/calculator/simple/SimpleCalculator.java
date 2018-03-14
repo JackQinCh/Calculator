@@ -28,7 +28,7 @@ public class SimpleCalculator implements Calculator {
 
     @NotNull
     @Override
-    public Calculator press(@NotNull final String key) {
+    public Calculator pressKey(@NotNull final String key) {
         if (!getKeyMap().containsKey(key)) {
             throw new IllegalArgumentException(String.format("Unsupported key %s.", key));
         }
@@ -67,12 +67,12 @@ public class SimpleCalculator implements Calculator {
         System.out.println(Arrays.toString(calculator.getAllKeys().toArray()));
 
         calculator.reset()
-                .press(Keys.ZERO.getSymbol())
-                .press(Keys.ONE.getSymbol())
-                .press(Keys.ZERO.getSymbol())
-                .press(Keys.TWO.getSymbol())
-                .press(Keys.DOT.getSymbol())
-                .press(Keys.ZERO.getSymbol());
+                .pressKey(Keys.ZERO.getSymbol())
+                .pressKey(Keys.ONE.getSymbol())
+                .pressKey(Keys.ZERO.getSymbol())
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.DOT.getSymbol())
+                .pressKey(Keys.ZERO.getSymbol());
 
         System.out.println(calculator.getDisplay());
 
