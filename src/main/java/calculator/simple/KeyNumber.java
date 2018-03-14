@@ -12,12 +12,12 @@ public abstract class KeyNumber implements Key {
     @Override
     public void press() {
         if (engine.isAppending()) {
-            engine.setDisplay(engine.getDisplay() + getKeyText());
+            engine.setDisplay(engine.getDisplay() + getSymbol());
         } else {
-            engine.setDisplay(getKeyText());
+            engine.setDisplay(getSymbol());
             engine.setAppending(true);
         }
     }
 
-    abstract protected String getKeyText();
+    abstract protected String getSymbol();
 }

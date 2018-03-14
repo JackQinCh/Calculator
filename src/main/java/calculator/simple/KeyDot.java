@@ -8,17 +8,17 @@ public class KeyDot extends KeyNumber{
     @Override
     public void press() {
         if (engine.isAppending()) {
-            if (!engine.getDisplay().contains(getKeyText())) {
-                engine.setDisplay(engine.getDisplay() + getKeyText());
+            if (!engine.getDisplay().contains(getSymbol())) {
+                engine.setDisplay(engine.getDisplay() + getSymbol());
             }
         } else {
-            engine.setDisplay(Keys.ZERO + getKeyText());
+            engine.setDisplay(Keys.ZERO + getSymbol());
             engine.setAppending(true);
         }
     }
 
     @Override
-    protected String getKeyText() {
+    protected String getSymbol() {
         return Keys.DOT.getSymbol();
     }
 }

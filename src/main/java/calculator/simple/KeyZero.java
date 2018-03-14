@@ -8,14 +8,14 @@ public class KeyZero extends KeyNumber {
     @Override
     public void press() {
         if (engine.isAppending()) {
-            engine.setDisplay(engine.getDisplay() + getKeyText());
+            engine.setDisplay(engine.getDisplay() + getSymbol());
         } else {
-            engine.setDisplay(getKeyText());
+            engine.setDisplay(getSymbol());
         }
     }
 
     @Override
-    protected String getKeyText() {
+    protected String getSymbol() {
         return Keys.ZERO.getSymbol();
     }
 }

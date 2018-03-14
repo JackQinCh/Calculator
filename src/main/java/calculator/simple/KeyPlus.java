@@ -41,4 +41,8 @@ public class KeyPlus implements Key {
         BigDecimal result = previousOperation.apply(previous, current);
         engine.setDisplay(result.toString());
     }
+    
+    protected String getSymbol() {
+        return Keys.PLUS.getSymbol();
+    }
 }
