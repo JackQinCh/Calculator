@@ -1,9 +1,13 @@
-package calculator.simple;
+package calculator.simple.keys;
+
+import calculator.simple.KeyBiOperation;
+import calculator.simple.Keys;
+import calculator.simple.SimpleCalcEngine;
 
 import java.math.BigDecimal;
 import java.util.function.BiFunction;
 
-public class KeyMultiply extends KeyBiOperation{
+public class KeyMultiply extends KeyBiOperation {
     public KeyMultiply(SimpleCalcEngine engine) {
         super(engine);
     }

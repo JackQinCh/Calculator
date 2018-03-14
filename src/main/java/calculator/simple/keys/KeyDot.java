@@ -1,6 +1,10 @@
-package calculator.simple;
+package calculator.simple.keys;
 
-public class KeyDot extends KeyNumber{
+import calculator.simple.KeyNumber;
+import calculator.simple.Keys;
+import calculator.simple.SimpleCalcEngine;
+
+public class KeyDot extends KeyNumber {
     public KeyDot(SimpleCalcEngine engine) {
         super(engine);
     }

@@ -1,4 +1,8 @@
-package calculator.simple;
+package calculator.simple.keys;
+
+import calculator.simple.KeyNumber;
+import calculator.simple.Keys;
+import calculator.simple.SimpleCalcEngine;
 
 public class KeyZero extends KeyNumber {
     public KeyZero(SimpleCalcEngine engine) {

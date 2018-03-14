@@ -4,7 +4,7 @@ import calculator.CalcEngine;
 import calculator.Calculator;
 import calculator.Key;
 import calculator.simple.Keys;
-import calculator.simple.KeyZero;
+import calculator.simple.keys.KeyZero;
 import calculator.simple.SimpleCalculator;
 import com.google.common.collect.ImmutableMap;
 
