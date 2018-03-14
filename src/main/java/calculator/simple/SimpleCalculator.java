@@ -12,6 +12,7 @@ import calculator.simple.keys.KeyFour;
 import calculator.simple.keys.KeyMultiply;
 import calculator.simple.keys.KeyNine;
 import calculator.simple.keys.KeyOne;
+import calculator.simple.keys.KeyPercentage;
 import calculator.simple.keys.KeySeven;
 import calculator.simple.keys.KeySix;
 import calculator.simple.keys.KeySubtract;
@@ -48,6 +49,7 @@ public class SimpleCalculator implements Calculator {
                 .put(Keys.SUBTRACT.getSymbol(), new KeySubtract(engine))
                 .put(Keys.MULTIPLY.getSymbol(), new KeyMultiply(engine))
                 .put(Keys.DIVISION.getSymbol(), new KeyDivision(engine))
+                .put(Keys.PERCENTAGE.getSymbol(), new KeyPercentage(engine))
                 .build();
     }
 

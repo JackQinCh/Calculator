@@ -21,6 +21,16 @@ public class SimpleCalculatorTest {
     }
 
     @Test
+    public void testGetAllKeys() throws Exception {
+        Set<String> expectedKeys =
+                Arrays.stream(Keys.values())
+                        .map(Keys::getSymbol)
+                        .collect(Collectors.toSet());
+
+        assertEquals(expectedKeys, calculator.getAllKeys().collect(Collectors.toSet()));
+    }
+
+    @Test
     public void testPressKey_startWithZero() throws Exception{
         calculator.reset()
                 .pressKey(Keys.ZERO.getSymbol())
@@ -169,14 +179,24 @@ public class SimpleCalculatorTest {
                 .pressKey(Keys.ZERO.getSymbol())
                 .pressKey(Keys.DIVISION.getSymbol());
     }
-    
+
     @Test
-    public void testGetAllKeys() throws Exception {
-        Set<String> expectedKeys = 
-                Arrays.stream(Keys.values())
-                        .map(Keys::getSymbol)
-                        .collect(Collectors.toSet());
-        
-        assertEquals(expectedKeys, calculator.getAllKeys().collect(Collectors.toSet()));
+    public void testPressKey_percentage() throws Exception {
+        calculator.reset()
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.PERCENTAGE.getSymbol());
+
+        assertEquals("0.02", calculator.getDisplay());
     }
+
+    @Test
+    public void testPressKey_doublePercentage() throws Exception {
+        calculator.reset()
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.PERCENTAGE.getSymbol())
+                .pressKey(Keys.PERCENTAGE.getSymbol());
+
+        assertEquals("0.0002", calculator.getDisplay());
+    }
+    
 }

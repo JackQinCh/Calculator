@@ -3,6 +3,8 @@ package calculator.simple;
 import calculator.CalcEngine;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.util.Stack;
 import java.util.function.BiFunction;
 
@@ -53,7 +55,15 @@ public class SimpleCalcEngine implements CalcEngine{
         BiFunction<BigDecimal, BigDecimal, BigDecimal> previousOperation =
                 getBiOperationStack().pop();
 
-        BigDecimal current = new BigDecimal(Long.valueOf(getDisplay()));
+        DecimalFormat format = new DecimalFormat();
+        format.setParseBigDecimal(true);
+        BigDecimal current = null;
+        try {
+            current = (BigDecimal) format.parse(getDisplay());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        
         BigDecimal previous = getNumberStack().pop();
         BigDecimal result = previousOperation.apply(previous, current);
         setDisplay(result.toString());
