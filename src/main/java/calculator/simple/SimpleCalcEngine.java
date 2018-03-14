@@ -44,4 +44,18 @@ public class SimpleCalcEngine implements CalcEngine{
         numberStack.clear();
         biOperationStack.clear();
     }
+
+    public void computePreviousBiOperation() {
+        if (getBiOperationStack().isEmpty()) {
+            return;
+        }
+
+        BiFunction<BigDecimal, BigDecimal, BigDecimal> previousOperation =
+                getBiOperationStack().pop();
+
+        BigDecimal current = new BigDecimal(Long.valueOf(getDisplay()));
+        BigDecimal previous = getNumberStack().pop();
+        BigDecimal result = previousOperation.apply(previous, current);
+        setDisplay(result.toString());
+    }
 }
