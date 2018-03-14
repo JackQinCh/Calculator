@@ -8,7 +8,7 @@ import java.util.function.BiFunction;
 
 public class SimpleCalcEngine implements CalcEngine{
     private boolean isAppending = false;
-    private String display = KeySet.ZERO;
+    private String display = Keys.ZERO.getSymbol();
     private Stack<BigDecimal> numberStack = new Stack<>();
     private Stack<BiFunction<BigDecimal, BigDecimal, BigDecimal>> biOperationStack = new Stack<>();
 
@@ -48,7 +48,7 @@ public class SimpleCalcEngine implements CalcEngine{
     @Override
     public void reset() {
         isAppending = false;
-        display = KeySet.ZERO;
+        display = Keys.ZERO.getSymbol();
         numberStack.clear();
         biOperationStack.clear();
     }

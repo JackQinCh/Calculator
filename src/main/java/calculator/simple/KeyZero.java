@@ -16,6 +16,6 @@ public class KeyZero extends KeyNumber {
 
     @Override
     protected String getKeyText() {
-        return KeySet.ZERO;
+        return Keys.ZERO.getSymbol();
     }
 }

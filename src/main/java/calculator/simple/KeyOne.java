@@ -7,6 +7,6 @@ public class KeyOne extends KeyNumber{
 
     @Override
     protected String getKeyText() {
-        return KeySet.ONE;
+        return Keys.ONE.getSymbol();
     }
 }

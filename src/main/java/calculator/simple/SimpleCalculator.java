@@ -18,11 +18,11 @@ public class SimpleCalculator implements Calculator {
     public SimpleCalculator() {
         this.engine = new SimpleCalcEngine();
         this.keyMap = ImmutableMap.<String, Key>builder()
-                .put(KeySet.ZERO, new KeyZero(engine))
-                .put(KeySet.ONE, new KeyOne(engine))
-                .put(KeySet.TWO, new KeyTwo(engine))
-                .put(KeySet.DOT, new KeyDot(engine))
-                .put(KeySet.PLUS, new KeyPlus(engine))
+                .put(Keys.ZERO.getSymbol(), new KeyZero(engine))
+                .put(Keys.ONE.getSymbol(), new KeyOne(engine))
+                .put(Keys.TWO.getSymbol(), new KeyTwo(engine))
+                .put(Keys.DOT.getSymbol(), new KeyDot(engine))
+                .put(Keys.PLUS.getSymbol(), new KeyPlus(engine))
                 .build();
     }
 
@@ -67,12 +67,12 @@ public class SimpleCalculator implements Calculator {
         System.out.println(Arrays.toString(calculator.getAllKeys().toArray()));
 
         calculator.reset()
-                .press(KeySet.ZERO)
-                .press(KeySet.ONE)
-                .press(KeySet.ZERO)
-                .press(KeySet.TWO)
-                .press(KeySet.DOT)
-                .press(KeySet.ZERO);
+                .press(Keys.ZERO.getSymbol())
+                .press(Keys.ONE.getSymbol())
+                .press(Keys.ZERO.getSymbol())
+                .press(Keys.TWO.getSymbol())
+                .press(Keys.DOT.getSymbol())
+                .press(Keys.ZERO.getSymbol());
 
         System.out.println(calculator.getDisplay());
 

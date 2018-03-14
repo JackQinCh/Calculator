@@ -3,6 +3,7 @@ package calculator.memorable;
 import calculator.CalcEngine;
 import calculator.Calculator;
 import calculator.Key;
+import calculator.simple.Keys;
 import calculator.simple.KeyZero;
 import calculator.simple.SimpleCalculator;
 import com.google.common.collect.ImmutableMap;
@@ -17,8 +18,8 @@ public class MemorableCalculator extends SimpleCalculator {
     public MemorableCalculator() {
         this.engine = new MemorableCalcEngine();
         this.keyMap = ImmutableMap.<String, Key>builder()
-                .put(MemorableKeySet.ZERO, new KeyZero(engine))
-                .put(MemorableKeySet.MEMORY_READ, new KeyReadMemory(engine))
+                .put(Keys.ZERO.getSymbol(), new KeyZero(engine))
+                .put(MemorableKeys.MEMORY_READ.getSymbol(), new KeyReadMemory(engine))
                 .build();
     }
 

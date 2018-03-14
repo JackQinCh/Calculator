@@ -12,13 +12,13 @@ public class KeyDot extends KeyNumber{
                 engine.setDisplay(engine.getDisplay() + getKeyText());
             }
         } else {
-            engine.setDisplay(KeySet.ZERO + getKeyText());
+            engine.setDisplay(Keys.ZERO + getKeyText());
             engine.setAppending(true);
         }
     }
 
     @Override
     protected String getKeyText() {
-        return KeySet.DOT;
+        return Keys.DOT.getSymbol();
     }
 }
