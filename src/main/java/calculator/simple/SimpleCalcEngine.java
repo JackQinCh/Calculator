@@ -33,18 +33,10 @@ public class SimpleCalcEngine implements CalcEngine{
         return numberStack;
     }
 
-    public void setNumberStack(Stack<BigDecimal> numberStack) {
-        this.numberStack = numberStack;
-    }
-
     public Stack<BiFunction<BigDecimal, BigDecimal, BigDecimal>> getBiOperationStack() {
         return biOperationStack;
     }
 
-    public void setBiOperationStack(Stack<BiFunction<BigDecimal, BigDecimal, BigDecimal>> biOperationStack) {
-        this.biOperationStack = biOperationStack;
-    }
-    
     @Override
     public void reset() {
         isAppending = false;
