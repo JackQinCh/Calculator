@@ -12,4 +12,8 @@ public class KeySet {
     public static final String EIGHT = "8";
     public static final String NINE = "9";
     public static final String DOT = ".";
+    public static final String PLUS = "+";
+    public static final String MINUS = "-";
+    public static final String MULTIPLE = "*";
+    public static final String DIVIDE = "/";
 }

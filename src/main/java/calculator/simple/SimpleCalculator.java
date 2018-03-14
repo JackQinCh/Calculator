@@ -19,6 +19,10 @@ public class SimpleCalculator implements Calculator {
         this.engine = new SimpleCalcEngine();
         this.keyMap = ImmutableMap.<String, Key>builder()
                 .put(KeySet.ZERO, new KeyZero(engine))
+                .put(KeySet.ONE, new KeyOne(engine))
+                .put(KeySet.TWO, new KeyTwo(engine))
+                .put(KeySet.DOT, new KeyDot(engine))
+                .put(KeySet.PLUS, new KeyPlus(engine))
                 .build();
     }
 
@@ -59,7 +63,11 @@ public class SimpleCalculator implements Calculator {
     public static void main(String[] args) {
         Calculator calculator = new SimpleCalculator();
 
-        System.out.println(calculator.press(KeySet.ZERO));
+        System.out.println(calculator.press(KeySet.ONE));
+        System.out.println(calculator.press(KeySet.PLUS));
+        System.out.println(calculator.press(KeySet.ONE));
+        System.out.println(calculator.press(KeySet.PLUS));
+        System.out.println(calculator.press(KeySet.TWO));
 
         System.out.println(Arrays.toString(calculator.getAllKeys().toArray()));
     }

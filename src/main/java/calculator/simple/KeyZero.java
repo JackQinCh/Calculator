@@ -1,20 +1,21 @@
 package calculator.simple;
 
-import calculator.Key;
-
-public class KeyZero implements Key {
-    private SimpleCalcEngine engine;
-
+public class KeyZero extends KeyNumber {
     public KeyZero(SimpleCalcEngine engine) {
-        this.engine = engine;
+        super(engine);
     }
 
     @Override
     public void press() {
         if (engine.isAppending()) {
-            engine.setDisplay(engine.getDisplay() + KeySet.ZERO);
+            engine.setDisplay(engine.getDisplay() + getKeyText());
         } else {
-            engine.setDisplay(KeySet.ZERO);
+            engine.setDisplay(getKeyText());
         }
+    }
+
+    @Override
+    protected String getKeyText() {
+        return KeySet.ZERO;
     }
 }
