@@ -3,8 +3,8 @@ package calculator;
 import java.util.stream.Stream;
 
 public interface Calculator {
-    String press(String key);
+    Calculator press(String key);
+    Calculator reset();
     Stream<String> getAllKeys();
     String getDisplay();
-    void reset();
 }

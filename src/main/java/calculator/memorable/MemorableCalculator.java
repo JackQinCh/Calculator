@@ -35,8 +35,6 @@ public class MemorableCalculator extends SimpleCalculator {
     public static void main(String[] args) {
         Calculator calculator = new MemorableCalculator();
         
-        System.out.println(calculator.press(MemorableKeySet.MEMORY_READ));
-
         System.out.println(Arrays.toString(calculator.getAllKeys().toArray()));
         
         calculator.reset();
