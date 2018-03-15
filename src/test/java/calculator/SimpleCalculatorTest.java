@@ -274,4 +274,17 @@ public class SimpleCalculatorTest {
 
         assertEquals("3", calculator.getDisplay());
     }
+    
+    @Test
+    public void testAllCleanKey() {
+        calculator.reset()
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.EQUAL.getSymbol())
+                .pressKey(Keys.ADD.getSymbol())
+                .pressKey(Keys.ONE.getSymbol())
+                .pressKey(Keys.EQUAL.getSymbol())
+                .pressKey(Keys.AC.getSymbol());
+
+        assertEquals("0", calculator.getDisplay());
+    }
 }
