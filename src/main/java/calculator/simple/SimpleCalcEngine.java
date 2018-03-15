@@ -9,7 +9,7 @@ import java.util.Stack;
 import java.util.function.BiFunction;
 
 public class SimpleCalcEngine implements CalcEngine{
-    private boolean isAppending = false;
+    private boolean isAppending = true;
     private String display = Keys.ZERO.getSymbol();
     private Stack<BigDecimal> numberStack = new Stack<>();
     private Stack<BiFunction<BigDecimal, BigDecimal, BigDecimal>> biOperationStack = new Stack<>();
