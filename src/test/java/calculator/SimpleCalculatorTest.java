@@ -287,4 +287,46 @@ public class SimpleCalculatorTest {
 
         assertEquals("0", calculator.getDisplay());
     }
+
+    @Test
+    public void testSignumKey() {
+        calculator.reset()
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.SIGNUM.getSymbol());
+
+        assertEquals("-2", calculator.getDisplay());
+    }
+
+    @Test
+    public void testSignumKey_double() {
+        calculator.reset()
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.SIGNUM.getSymbol())
+                .pressKey(Keys.SIGNUM.getSymbol());
+
+        assertEquals("2", calculator.getDisplay());
+    }
+
+    @Test
+    public void testSignumKey_withBiOperation() {
+        calculator.reset()
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.SIGNUM.getSymbol())
+                .pressKey(Keys.ADD.getSymbol())
+                .pressKey(Keys.FIVE.getSymbol())
+                .pressKey(Keys.EQUAL.getSymbol());
+
+        assertEquals("3", calculator.getDisplay());
+    }
+
+    @Test
+    public void testSignumKey_withNewNumber() {
+        calculator.reset()
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.SIGNUM.getSymbol())
+                .pressKey(Keys.FIVE.getSymbol())
+                .pressKey(Keys.EQUAL.getSymbol());
+
+        assertEquals("5", calculator.getDisplay());
+    }
 }

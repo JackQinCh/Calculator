@@ -18,7 +18,8 @@ public enum Keys {
     DIVISION("/"),
     PERCENTAGE("%"),
     EQUAL("="),
-    AC("AC");
+    AC("AC"),
+    SIGNUM("+/-");
     
     private final String symbol;
 

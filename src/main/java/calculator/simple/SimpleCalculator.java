@@ -37,6 +37,7 @@ public class SimpleCalculator implements Calculator {
                 .put(Keys.PERCENTAGE.getSymbol(), new KeyPercentage(engine))
                 .put(Keys.EQUAL.getSymbol(), new KeyEqual(engine))
                 .put(Keys.AC.getSymbol(), new KeyAllClean(engine))
+                .put(Keys.SIGNUM.getSymbol(), new KeySignum(engine))
                 .build();
     }
 
