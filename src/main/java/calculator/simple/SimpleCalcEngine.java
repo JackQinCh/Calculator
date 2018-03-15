@@ -10,17 +10,17 @@ import java.util.Stack;
 import java.util.function.BiFunction;
 
 public class SimpleCalcEngine implements CalcEngine{
-    private boolean isAppending = true;
+    private EngineStatus status = EngineStatus.Appending;
     private String display = Keys.ZERO.getSymbol();
     private Stack<BigDecimal> numberStack = new Stack<>();
     private Stack<BiFunction<BigDecimal, BigDecimal, BigDecimal>> biOperationStack = new Stack<>();
 
-    public boolean isAppending() {
-        return isAppending;
+    public EngineStatus getStatus() {
+        return status;
     }
 
-    public void setAppending(boolean appending) {
-        isAppending = appending;
+    public void setStatus(EngineStatus status) {
+        this.status = status;
     }
 
     @Override
@@ -54,7 +54,7 @@ public class SimpleCalcEngine implements CalcEngine{
 
     @Override
     public void reset() {
-        isAppending = false;
+        status = EngineStatus.Appending;
         display = Keys.ZERO.getSymbol();
         numberStack.clear();
         biOperationStack.clear();

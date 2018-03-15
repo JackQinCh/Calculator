@@ -12,7 +12,7 @@ public abstract class KeyNumber implements Key {
 
     @Override
     public void press() {
-        if (engine.isAppending()) {
+        if (engine.getStatus() == EngineStatus.Appending) {
             if (StringUtils.equals(Keys.ZERO.getSymbol(), engine.getDisplay())) {
                 engine.setDisplay(getSymbol());
             } else {
@@ -20,7 +20,7 @@ public abstract class KeyNumber implements Key {
             }
         } else {
             engine.setDisplay(getSymbol());
-            engine.setAppending(true);
+            engine.setStatus(EngineStatus.Appending);
         }
     }
 

@@ -14,8 +14,8 @@ public abstract class KeyBiOperation implements Key {
 
     @Override
     public void press() {
-        if (engine.isAppending()) {
-            engine.setAppending(false);
+        if (engine.getStatus() != EngineStatus.BiOperation) {
+            engine.setStatus(EngineStatus.BiOperation);
             engine.computePreviousBiOperation();
             BigDecimal current = engine.getCurrentNumber();
             engine.getNumberStack().push(current);
@@ -23,8 +23,8 @@ public abstract class KeyBiOperation implements Key {
         } else {
             if (!engine.getBiOperationStack().isEmpty()) {
                 engine.getBiOperationStack().pop();
+                engine.getBiOperationStack().push(getOperation());
             }
-            engine.getBiOperationStack().push(getOperation());
         }
     }
 

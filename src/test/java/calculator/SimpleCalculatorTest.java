@@ -198,5 +198,29 @@ public class SimpleCalculatorTest {
 
         assertEquals("0.0002", calculator.getDisplay());
     }
+
+    @Test
+    public void testPressKey_percentageWithBiOperation() throws Exception {
+        calculator.reset()
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.PERCENTAGE.getSymbol())
+                .pressKey(Keys.ADD.getSymbol())
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.ADD.getSymbol());
+
+        assertEquals("2.02", calculator.getDisplay());
+    }
+
+    @Test
+    public void testPressKey_percentageWithChangeBiOperation() throws Exception {
+        calculator.reset()
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.ADD.getSymbol())
+                .pressKey(Keys.SUBTRACT.getSymbol())
+                .pressKey(Keys.PERCENTAGE.getSymbol())
+                .pressKey(Keys.ADD.getSymbol());
+
+        assertEquals("1.98", calculator.getDisplay());
+    }
     
 }

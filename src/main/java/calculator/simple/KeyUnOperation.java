@@ -17,7 +17,7 @@ public abstract class KeyUnOperation implements Key{
 
     @Override
     public void press() {
-        engine.setAppending(false);
+        engine.setStatus(EngineStatus.NewNumber);
         computeOperation(engine);
     }
 
