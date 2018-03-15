@@ -222,5 +222,56 @@ public class SimpleCalculatorTest {
 
         assertEquals("1.98", calculator.getDisplay());
     }
-    
+
+    @Test
+    public void testPressKey_equal() throws Exception {
+        calculator.reset()
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.ADD.getSymbol())
+                .pressKey(Keys.THREE.getSymbol())
+                .pressKey(Keys.ONE.getSymbol())
+                .pressKey(Keys.EQUAL.getSymbol());
+
+        assertEquals("33", calculator.getDisplay());
+    }
+
+    @Test
+    public void testPressKey_equalWithUnOperation() throws Exception {
+        calculator.reset()
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.ADD.getSymbol())
+                .pressKey(Keys.THREE.getSymbol())
+                .pressKey(Keys.ONE.getSymbol())
+                .pressKey(Keys.EQUAL.getSymbol())
+                .pressKey(Keys.PERCENTAGE.getSymbol());
+
+        assertEquals("0.33", calculator.getDisplay());
+    }
+
+    @Test
+    public void testPressKey_equalWithBiOperation() throws Exception {
+        calculator.reset()
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.ADD.getSymbol())
+                .pressKey(Keys.THREE.getSymbol())
+                .pressKey(Keys.ONE.getSymbol())
+                .pressKey(Keys.EQUAL.getSymbol())
+                .pressKey(Keys.MULTIPLY.getSymbol())
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.EQUAL.getSymbol());
+
+        assertEquals("66", calculator.getDisplay());
+    }
+
+    @Test
+    public void testPressKey_equalWithNumber() throws Exception {
+        calculator.reset()
+                .pressKey(Keys.TWO.getSymbol())
+                .pressKey(Keys.EQUAL.getSymbol())
+                .pressKey(Keys.ADD.getSymbol())
+                .pressKey(Keys.ONE.getSymbol())
+                .pressKey(Keys.EQUAL.getSymbol());
+
+        assertEquals("3", calculator.getDisplay());
+    }
 }

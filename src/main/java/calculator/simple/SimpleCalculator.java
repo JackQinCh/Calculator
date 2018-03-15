@@ -3,22 +3,7 @@ package calculator.simple;
 import calculator.CalcEngine;
 import calculator.Calculator;
 import calculator.Key;
-import calculator.simple.keys.KeyAdd;
-import calculator.simple.keys.KeyDivision;
-import calculator.simple.keys.KeyDot;
-import calculator.simple.keys.KeyEight;
-import calculator.simple.keys.KeyFive;
-import calculator.simple.keys.KeyFour;
-import calculator.simple.keys.KeyMultiply;
-import calculator.simple.keys.KeyNine;
-import calculator.simple.keys.KeyOne;
-import calculator.simple.keys.KeyPercentage;
-import calculator.simple.keys.KeySeven;
-import calculator.simple.keys.KeySix;
-import calculator.simple.keys.KeySubtract;
-import calculator.simple.keys.KeyThree;
-import calculator.simple.keys.KeyTwo;
-import calculator.simple.keys.KeyZero;
+import calculator.simple.keys.*;
 import com.google.common.collect.ImmutableMap;
 import com.sun.istack.internal.NotNull;
 
@@ -50,6 +35,7 @@ public class SimpleCalculator implements Calculator {
                 .put(Keys.MULTIPLY.getSymbol(), new KeyMultiply(engine))
                 .put(Keys.DIVISION.getSymbol(), new KeyDivision(engine))
                 .put(Keys.PERCENTAGE.getSymbol(), new KeyPercentage(engine))
+                .put(Keys.EQUAL.getSymbol(), new KeyEqual(engine))
                 .build();
     }
 
