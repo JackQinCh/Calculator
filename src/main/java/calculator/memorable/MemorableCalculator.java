@@ -3,15 +3,15 @@ package calculator.memorable;
 import calculator.CalcEngine;
 import calculator.Calculator;
 import calculator.Key;
-import calculator.simple.Keys;
-import calculator.simple.keys.KeyZero;
-import calculator.simple.SimpleCalculator;
+import calculator.basic.Keys;
+import calculator.basic.keys.KeyZero;
+import calculator.basic.BasicCalculator;
 import com.google.common.collect.ImmutableMap;
 
 import java.util.Arrays;
 import java.util.Map;
 
-public class MemorableCalculator extends SimpleCalculator {
+public class MemorableCalculator extends BasicCalculator {
     private final MemorableCalcEngine engine;
     private final Map<String, Key> keyMap;
     

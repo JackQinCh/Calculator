@@ -1,4 +1,4 @@
-package calculator.simple;
+package calculator.basic;
 
 public enum Keys {
     ZERO("0"),

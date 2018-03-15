@@ -1,12 +1,12 @@
-package calculator.simple.keys;
+package calculator.basic.keys;
 
-import calculator.simple.EngineStatus;
-import calculator.simple.KeyNumber;
-import calculator.simple.Keys;
-import calculator.simple.SimpleCalcEngine;
+import calculator.basic.EngineStatus;
+import calculator.basic.KeyNumber;
+import calculator.basic.Keys;
+import calculator.basic.BasicCalcEngine;
 
 public class KeyDot extends KeyNumber {
-    public KeyDot(SimpleCalcEngine engine) {
+    public KeyDot(BasicCalcEngine engine) {
         super(engine);
     }
 

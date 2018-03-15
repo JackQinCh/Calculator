@@ -1,15 +1,15 @@
-package calculator.simple.keys;
+package calculator.basic.keys;
 
 import calculator.Key;
-import calculator.simple.EngineStatus;
-import calculator.simple.SimpleCalcEngine;
+import calculator.basic.EngineStatus;
+import calculator.basic.BasicCalcEngine;
 
 import java.math.BigDecimal;
 
 public class KeySignum implements Key{
-    protected SimpleCalcEngine engine;
+    protected BasicCalcEngine engine;
     
-    public KeySignum(SimpleCalcEngine engine) {
+    public KeySignum(BasicCalcEngine engine) {
         this.engine = engine;
     }
 

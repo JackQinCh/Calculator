@@ -1,14 +1,14 @@
-package calculator.simple.keys;
+package calculator.basic.keys;
 
-import calculator.simple.KeyBiOperation;
-import calculator.simple.Keys;
-import calculator.simple.SimpleCalcEngine;
+import calculator.basic.KeyBiOperation;
+import calculator.basic.Keys;
+import calculator.basic.BasicCalcEngine;
 
 import java.math.BigDecimal;
 import java.util.function.BiFunction;
 
 public class KeyMultiply extends KeyBiOperation {
-    public KeyMultiply(SimpleCalcEngine engine) {
+    public KeyMultiply(BasicCalcEngine engine) {
         super(engine);
     }
 

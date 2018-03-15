@@ -1,12 +1,12 @@
-package calculator.simple;
+package calculator.basic;
 
 import calculator.Key;
 import org.apache.commons.lang3.StringUtils;
 
 public abstract class KeyNumber implements Key {
-    protected SimpleCalcEngine engine;
+    protected BasicCalcEngine engine;
 
-    public KeyNumber(SimpleCalcEngine engine) {
+    public KeyNumber(BasicCalcEngine engine) {
         this.engine = engine;
     }
 

@@ -1,4 +1,4 @@
-package calculator.simple;
+package calculator.basic;
 
 import calculator.Key;
 
@@ -9,9 +9,9 @@ import java.util.function.Function;
  * Unitary operation key
  */
 public abstract class KeyUnOperation implements Key{
-    protected SimpleCalcEngine engine;
+    protected BasicCalcEngine engine;
 
-    public KeyUnOperation(SimpleCalcEngine engine) {
+    public KeyUnOperation(BasicCalcEngine engine) {
         this.engine = engine;
     }
 
@@ -25,7 +25,7 @@ public abstract class KeyUnOperation implements Key{
 
     protected abstract Function<BigDecimal, BigDecimal> getOperation();
     
-    private void computeOperation(SimpleCalcEngine engine) {
+    private void computeOperation(BasicCalcEngine engine) {
         BigDecimal current = engine.getCurrentNumber();
         BigDecimal result = getOperation().apply(current);
         engine.setDisplay(result.toString());

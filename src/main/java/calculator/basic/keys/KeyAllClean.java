@@ -1,12 +1,12 @@
-package calculator.simple.keys;
+package calculator.basic.keys;
 
 import calculator.Key;
-import calculator.simple.SimpleCalcEngine;
+import calculator.basic.BasicCalcEngine;
 
 public class KeyAllClean implements Key{
-    protected SimpleCalcEngine engine;
+    protected BasicCalcEngine engine;
 
-    public KeyAllClean(SimpleCalcEngine engine) {
+    public KeyAllClean(BasicCalcEngine engine) {
         this.engine = engine;
     }
 

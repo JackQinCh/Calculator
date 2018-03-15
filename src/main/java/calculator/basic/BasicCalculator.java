@@ -1,9 +1,9 @@
-package calculator.simple;
+package calculator.basic;
 
 import calculator.CalcEngine;
 import calculator.Calculator;
 import calculator.Key;
-import calculator.simple.keys.*;
+import calculator.basic.keys.*;
 import com.google.common.collect.ImmutableMap;
 import com.sun.istack.internal.NotNull;
 
@@ -11,13 +11,13 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Stream;
 
-public class SimpleCalculator implements Calculator {
+public class BasicCalculator implements Calculator {
     
-    private final SimpleCalcEngine engine;
+    private final BasicCalcEngine engine;
     private final Map<String, Key> keyMap;
 
-    public SimpleCalculator() {
-        this.engine = new SimpleCalcEngine();
+    public BasicCalculator() {
+        this.engine = new BasicCalcEngine();
         this.keyMap = ImmutableMap.<String, Key>builder()
                 .put(Keys.ZERO.getSymbol(), new KeyZero(engine))
                 .put(Keys.ONE.getSymbol(), new KeyOne(engine))
@@ -77,7 +77,7 @@ public class SimpleCalculator implements Calculator {
     }
 
     public static void main(String[] args) {
-        Calculator calculator = new SimpleCalculator();
+        Calculator calculator = new BasicCalculator();
         
         System.out.println(Arrays.toString(calculator.getAllKeys().toArray()));
 

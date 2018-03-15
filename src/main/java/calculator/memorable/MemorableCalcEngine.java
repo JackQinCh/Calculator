@@ -1,10 +1,10 @@
 package calculator.memorable;
 
-import calculator.simple.SimpleCalcEngine;
+import calculator.basic.BasicCalcEngine;
 
 import java.math.BigDecimal;
 
-public class MemorableCalcEngine extends SimpleCalcEngine implements Memorable{
+public class MemorableCalcEngine extends BasicCalcEngine implements Memorable{
     private BigDecimal memory = BigDecimal.ZERO;
     
     @Override

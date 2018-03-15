@@ -1,7 +1,7 @@
 package calculator;
 
-import calculator.simple.Keys;
-import calculator.simple.SimpleCalculator;
+import calculator.basic.Keys;
+import calculator.basic.BasicCalculator;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,13 +11,13 @@ import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
 
-public class SimpleCalculatorTest {
+public class BasicCalculatorTest {
     
     private Calculator calculator;
 
     @Before
     public void setUp() throws Exception {
-        calculator = new SimpleCalculator();
+        calculator = new BasicCalculator();
     }
 
     @Test

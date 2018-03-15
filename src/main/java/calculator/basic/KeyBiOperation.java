@@ -1,4 +1,4 @@
-package calculator.simple;
+package calculator.basic;
 
 import calculator.Key;
 
@@ -6,9 +6,9 @@ import java.math.BigDecimal;
 import java.util.function.BiFunction;
 
 public abstract class KeyBiOperation implements Key {
-    protected SimpleCalcEngine engine;
+    protected BasicCalcEngine engine;
 
-    public KeyBiOperation(SimpleCalcEngine engine) {
+    public KeyBiOperation(BasicCalcEngine engine) {
         this.engine = engine;
     }
 

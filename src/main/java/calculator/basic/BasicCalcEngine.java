@@ -1,4 +1,4 @@
-package calculator.simple;
+package calculator.basic;
 
 import calculator.CalcEngine;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
@@ -9,7 +9,7 @@ import java.text.ParseException;
 import java.util.Stack;
 import java.util.function.BiFunction;
 
-public class SimpleCalcEngine implements CalcEngine{
+public class BasicCalcEngine implements CalcEngine{
     private EngineStatus status = EngineStatus.Appending;
     private String display = Keys.ZERO.getSymbol();
     private Stack<BigDecimal> numberStack = new Stack<>();

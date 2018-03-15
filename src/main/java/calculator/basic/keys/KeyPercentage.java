@@ -1,14 +1,14 @@
-package calculator.simple.keys;
+package calculator.basic.keys;
 
-import calculator.simple.KeyUnOperation;
-import calculator.simple.Keys;
-import calculator.simple.SimpleCalcEngine;
+import calculator.basic.KeyUnOperation;
+import calculator.basic.Keys;
+import calculator.basic.BasicCalcEngine;
 
 import java.math.BigDecimal;
 import java.util.function.Function;
 
 public class KeyPercentage extends KeyUnOperation{
-    public KeyPercentage(SimpleCalcEngine engine) {
+    public KeyPercentage(BasicCalcEngine engine) {
         super(engine);
     }
 
