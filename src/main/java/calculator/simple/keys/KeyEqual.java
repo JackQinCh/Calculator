@@ -15,5 +15,7 @@ public class KeyEqual implements Key {
     public void press() {
         engine.setStatus(EngineStatus.NewNumber);
         engine.computePreviousBiOperation();
+        
+        //TODO: Implement continued equal key function
     }
 }
