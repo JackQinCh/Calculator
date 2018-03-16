@@ -19,6 +19,6 @@ public class KeyDivision extends KeyBiOperation {
 
     @Override
     protected BiFunction<BigDecimal, BigDecimal, BigDecimal> getOperation() {
-        return BigDecimal::divide;
+        return (a, b) -> a.divide(b, 8, BigDecimal.ROUND_HALF_DOWN);
     }
 }

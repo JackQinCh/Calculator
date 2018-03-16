@@ -70,7 +70,7 @@ public class BasicCalcEngine implements CalcEngine{
         BigDecimal current = getCurrentNumber();
         BigDecimal previous = getNumberStack().pop();
         BigDecimal result = previousOperation.apply(previous, current);
-        setDisplay(result.toString());
+        setDisplay(result.stripTrailingZeros().toPlainString());
     }
 
     @Override

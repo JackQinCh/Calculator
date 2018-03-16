@@ -28,6 +28,6 @@ public abstract class KeyUnOperation implements Key{
     private void computeOperation(BasicCalcEngine engine) {
         BigDecimal current = engine.getCurrentNumber();
         BigDecimal result = getOperation().apply(current);
-        engine.setDisplay(result.toString());
+        engine.setDisplay(result.stripTrailingZeros().toPlainString());
     }
 }

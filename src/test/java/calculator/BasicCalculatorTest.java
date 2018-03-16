@@ -171,6 +171,17 @@ public class BasicCalculatorTest {
         assertEquals("1", calculator.getDisplay());
     }
 
+    @Test
+    public void testPressKey_divisionInfinite() throws Exception {
+        calculator.reset()
+                .pressKey(Keys.ONE.getSymbol())
+                .pressKey(Keys.DIVISION.getSymbol())
+                .pressKey(Keys.THREE.getSymbol())
+                .pressKey(Keys.EQUAL.getSymbol());
+
+        assertEquals("0.33333333", calculator.getDisplay());
+    }
+
     @Test(expected = ArithmeticException.class)
     public void testPressKey_divideZero() throws Exception {
         calculator.reset()
