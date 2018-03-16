@@ -13,8 +13,10 @@ Functions refer this image:
 Library call example:
 
 ```java
+// create an basic calculator
 Calculator calculator = new BasicCalculator();
 
+// 2 + 31 = 33; 33 * 2 = 66;
 calculator.reset()
     .pressKey(Keys.TWO.getSymbol())
     .pressKey(Keys.ADD.getSymbol())
@@ -25,6 +27,7 @@ calculator.reset()
     .pressKey(Keys.TWO.getSymbol())
     .pressKey(Keys.EQUAL.getSymbol());
 
+// display = "66";
 String display = calculator.getDisplay();
 
 ```
