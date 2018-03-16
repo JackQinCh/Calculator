@@ -5,7 +5,6 @@ import calculator.basic.BasicCalculator;
 import calculator.basic.Keys;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class BasicCalcController {
@@ -13,44 +12,6 @@ public class BasicCalcController {
 
     @FXML
     private TextField display;
-    @FXML
-    private Button keyZero;
-    @FXML
-    private Button keyOne;
-    @FXML
-    private Button keyTwo;
-    @FXML
-    private Button keyThree;
-    @FXML
-    private Button keyFour;
-    @FXML
-    private Button keyFive;
-    @FXML
-    private Button keySix;
-    @FXML
-    private Button keySeven;
-    @FXML
-    private Button keyEight;
-    @FXML
-    private Button keyNine;
-    @FXML
-    private Button keyEqual;
-    @FXML
-    private Button keyDot;
-    @FXML
-    private Button keyAddition;
-    @FXML
-    private Button keySubtract;
-    @FXML
-    private Button keyMultiply;
-    @FXML
-    private Button keyDivision;
-    @FXML
-    private Button keyPercentage;
-    @FXML
-    private Button keySignum;
-    @FXML
-    private Button keyAC;
 
     @FXML
     private void keyZeroPress(ActionEvent event) {
