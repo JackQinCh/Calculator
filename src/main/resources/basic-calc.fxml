@@ -9,7 +9,8 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="344.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fx.BasicCalcController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="344.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.qin.calculator.fx.BasicCalcController">
    <top>
       <TextField fx:id="display" alignment="BASELINE_RIGHT" editable="false" focusTraversable="false" prefHeight="117.0" prefWidth="332.0" text="0" BorderPane.alignment="CENTER">
          <font>
