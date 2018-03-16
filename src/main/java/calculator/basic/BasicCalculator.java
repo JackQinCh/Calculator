@@ -7,7 +7,6 @@ import calculator.basic.keys.*;
 import com.google.common.collect.ImmutableMap;
 import com.sun.istack.internal.NotNull;
 
-import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Stream;
 
@@ -74,23 +73,6 @@ public class BasicCalculator implements Calculator {
     
     protected Map<String, Key> getKeyMap() {
         return keyMap;
-    }
-
-    public static void main(String[] args) {
-        Calculator calculator = new BasicCalculator();
-        
-        System.out.println(Arrays.toString(calculator.getAllKeys().toArray()));
-
-        calculator.reset()
-                .pressKey(Keys.ZERO.getSymbol())
-                .pressKey(Keys.ONE.getSymbol())
-                .pressKey(Keys.ZERO.getSymbol())
-                .pressKey(Keys.TWO.getSymbol())
-                .pressKey(Keys.DOT.getSymbol())
-                .pressKey(Keys.ZERO.getSymbol());
-
-        System.out.println(calculator.getDisplay());
-
     }
 
 }
