@@ -13,6 +13,7 @@ public class BasicCalcFX extends Application {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("basic-calc.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root));
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 
